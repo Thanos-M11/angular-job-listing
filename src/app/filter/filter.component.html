@@ -1,0 +1,23 @@
+@if(!isFilterEmpty) {
+<section class="filter-bar">
+  @if(filter.role){
+
+  <app-button
+    [content]="filter.role"
+    [withWrapper]="true"
+    [feature]="'role'"
+  />
+  }
+  <!--   
+  @if(filter.level){
+  <app-button [content]="filter.level" [withWrapper]="true" />
+  } @if(filter.languages){ @for (language of filter.languages; track language) {
+  <app-button [content]="language" [withWrapper]="true" />
+  } } @if(filter.tools){ @for (tool of filter.tools; track tool) {
+  <app-button [content]="tool" [withWrapper]="true" />
+  } } 
+  -->
+
+  <button class="filter-clear">Clear</button>
+</section>
+}

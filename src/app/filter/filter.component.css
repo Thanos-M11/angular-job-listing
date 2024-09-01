@@ -1,0 +1,37 @@
+.filter-bar {
+  width: 390px;
+  padding: 0.8em 1.75em;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 1em;
+  border-radius: 0.5em;
+  background-color: azure;
+  position: absolute;
+  top: 12.5rem;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 1.5rem;
+  box-shadow: 0 10px 20px -7px hsl(180, 29%, 70%);
+}
+
+@media (min-width: 600px) {
+  .filter-bar {
+    width: 80vw;
+  }
+}
+
+.filter-clear {
+  margin-left: auto;
+  border: none;
+  background-color: inherit;
+  font-size: 1.7rem;
+  color: hsl(180, 29%, 40%);
+  font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+}

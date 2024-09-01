@@ -1,0 +1,49 @@
+<li class="job-item">
+  <img class="details-img logo" [src]="job().logo" [alt]="job().company" />
+  <div class="job-details">
+    <section class="details-info_section">
+      <p class="details-info_line-1">
+        <span class="company">{{ job().company }}</span>
+        @if (job().new){
+        <span class="new">NEW</span>
+        } @if (job().featured){
+        <span class="featured">FEATURED</span>
+        }
+      </p>
+
+      <p class="position">{{ job().position }}</p>
+
+      <p class="details-info_line-3">
+        <span class="postedAt">{{ job().postedAt }}</span>
+        <span>&bull;</span>
+        <span class="contract">{{ job().contract }}</span>
+        <span>&bull;</span>
+        <span class="location">{{ job().location }}</span>
+      </p>
+    </section>
+  </div>
+
+  <div class="job-filters">
+    @if (job().role){
+    <app-button
+      [content]="job().role"
+      [withWrapper]="false"
+      [feature]="'role'"
+    />
+    } @if (job().level){
+    <app-button
+      [content]="job().level"
+      [withWrapper]="false"
+      [feature]="'level'"
+    />
+    } @if(job().languages){ @for (language of job().languages; track language){
+    <app-button
+      [content]="language"
+      [withWrapper]="false"
+      [feature]="'languages'"
+    />
+    } } @if(job().tools){ @for (tool of job().tools; track tool){
+    <app-button [content]="tool" [withWrapper]="false" [feature]="'tools'" />
+    } }
+  </div>
+</li>

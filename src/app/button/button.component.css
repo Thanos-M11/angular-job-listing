@@ -1,0 +1,46 @@
+.button-wrapper {
+  display: inline-flex;
+  align-items: center;
+  background-color: hsl(180, 31%, 95%);
+  border-radius: 0.5em;
+}
+
+.button-wrapper button {
+  border: none;
+  background-color: inherit;
+  padding: 0.4em;
+  color: hsl(180, 29%, 50%);
+  border-radius: 0.5em;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.button-wrapper img {
+  background-color: hsl(180, 29%, 50%);
+  padding: 0.4em;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+
+  &:hover {
+    background-color: hsl(180, 14%, 20%);
+    cursor: pointer;
+  }
+}
+
+
+.filter-btn {
+  font-size: 1.7rem;
+  font-weight: 700;
+  background-color: hsl(180, 29%, 92%);
+
+  padding: 0.5em 0.8em;
+  border-radius: 0.5em;
+  color: hsl(180, 29%, 50%);
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    background-color: hsl(180, 29%, 50%);
+    color: hsl(180, 52%, 96%);
+  }
+}

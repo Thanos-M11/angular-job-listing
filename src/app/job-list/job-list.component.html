@@ -1,0 +1,5 @@
+<ul class="app-jobs-ul">
+  @for (job of jobs; track job.id) {
+  <app-job-item [job]="job" />
+  }
+</ul>

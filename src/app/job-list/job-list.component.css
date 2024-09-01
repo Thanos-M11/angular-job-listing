@@ -1,0 +1,12 @@
+/* job list */
+.app-jobs-ul {
+  margin: 12em auto;
+  width: 390px;
+}
+
+@media (min-width: 600px) {
+  .app-jobs-ul {
+    width: 80vw;
+    margin: 9em auto;
+  }
+}
