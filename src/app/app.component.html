@@ -1,4 +1,4 @@
 <app-header />
-<app-filter />
-<app-job-list />
+<app-filter [filter]="currentFilter" [isFilterEmpty]="isFilterEmpty" />
+<app-job-list [jobs]="currentJobs" />
 <app-footer />

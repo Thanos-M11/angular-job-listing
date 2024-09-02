@@ -1,6 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input, OnInit, signal } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
-import { FilterService } from './filter.service';
 import { Filter } from './filter.model';
 
 @Component({
@@ -11,7 +10,6 @@ import { Filter } from './filter.model';
   styleUrl: './filter.component.css',
 })
 export class FilterComponent {
-  filterService = inject(FilterService);
-  filter = this.filterService.getFilter();
-  isFilterEmpty = this.filterService.isEmpty();
+  filter = input.required<Filter>();
+  isFilterEmpty = input.required<Boolean>();
 }
