@@ -1,27 +1,78 @@
-# AngularJobListing
+# Frontend Mentor - Job listings with filtering solution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+This is a solution to the [Job listings with filtering challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt).
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### The challenge
 
-## Code scaffolding
+Users are able to:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Filter job listings based on the categories
 
-## Build
+### Screenshot
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![desktop with filters on ](./public/desktop-with-filter.png),
+![mobile with filters on ](./public/mobile-with-filter.png),
 
-## Running unit tests
+### Links
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [Solution URL Github](https://github.com/Thanos-M11/angular-job-listing)
+- [Live Site URL](https://thanos-m11.github.io/job-listing-typescript/)
 
-## Running end-to-end tests
+## My process
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Interfaces, Types
 
-## Further help
+- Job interface
+- Filter interface
+- BtnType type
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Services
+
+- injectable `FilterService` class with 4 methods:
+
+  - `getFilter()`
+  - `setFilter()`
+  - `clearFilter()`
+  - `isEmpty()`
+
+- injectable `JobService` class with 3 methods:
+  - `getJobs()`
+  - `setJobs()`
+  - `getFilteredJobs()`
+
+### Flexible component
+
+- `ButtonComponent`
+  - receives:
+    - 4 `input` props (`content`, `feature`, `withWrapper`, `className`)
+    - a `filterService`
+  - and has 2 handle Methods:
+    - `addFilterHandler`
+    - `removeFilterHandler`
+
+The concept is to have one button component to handle three types of operations:
+
+1. an operation that adds a filter of a specific feature,
+2. an operation that removes a filter of a specific feature
+3. an operation that clears all filter
+   Pluss that each opeartion have a different style.
+   The opeartion that removes a filter has a wrapper remove icon at the end.
+
+### Built with
+
+- Angular@18, signals, services, `ngDoCheck` lifecycle hook
+- CSS custom properties
+- Flexbox, CSS Grid
+- Mobile-first workflow
+- Responsive
+
+### Continued development
+
+## Author
+
+- Website - [Thanos Kalaitzis](https://thanosdev.netlify.app/homepage)
+- Frontend Mentor Profile - [@Thanos-M11](https://www.frontendmentor.io/profile/Thanos-M11)
