@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { FilterService } from './filter.service';
+import { Filter } from './filter.model';
 
 @Component({
   selector: 'app-filter',

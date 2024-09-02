@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { Filter } from './filter.model';
 
 @Injectable({ providedIn: 'root' })
@@ -16,12 +16,14 @@ export class FilterService {
     return this.filter;
   }
 
-  public setFilter(filter: Filter): void {
+  public setFilter(filter: Filter) {
     this.filter = { ...this.filter, ...filter };
+    console.log(this.filter);
   }
 
   public clearFilter(): void {
     this.filter = this.initialState;
+    console.log(this.filter);
   }
 
   public isEmpty(): boolean {

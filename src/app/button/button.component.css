@@ -27,7 +27,6 @@
   }
 }
 
-
 .filter-btn {
   font-size: 1.7rem;
   font-weight: 700;
@@ -42,5 +41,19 @@
     cursor: pointer;
     background-color: hsl(180, 29%, 50%);
     color: hsl(180, 52%, 96%);
+  }
+}
+
+.filter-clear {
+  border: none;
+  background-color: inherit;
+  font-size: 1.7rem;
+  color: hsl(180, 29%, 40%);
+  font-weight: 600;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    text-decoration: underline;
   }
 }

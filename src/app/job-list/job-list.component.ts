@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { JobItemComponent } from '../job-item/job-item.component';
 
 import { Job } from './job.model';
-import { JobsService } from './jobs-service';
+import { JobsService } from './jobs.service';
 import { FilterService } from '../filter/filter.service';
 
 @Component({

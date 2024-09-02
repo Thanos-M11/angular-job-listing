@@ -2,22 +2,28 @@
 <section class="filter-bar">
   @if(filter.role){
 
+  <app-button [content]="filter.role" [withWrapper]="true" [feature]="'role'" />
+  } @if(filter.level){
   <app-button
-    [content]="filter.role"
+    [content]="filter.level"
     [withWrapper]="true"
-    [feature]="'role'"
+    [feature]="'level'"
   />
-  }
-  <!--   
-  @if(filter.level){
-  <app-button [content]="filter.level" [withWrapper]="true" />
   } @if(filter.languages){ @for (language of filter.languages; track language) {
-  <app-button [content]="language" [withWrapper]="true" />
+  <app-button
+    [content]="language"
+    [withWrapper]="true"
+    [feature]="'languages'"
+  />
   } } @if(filter.tools){ @for (tool of filter.tools; track tool) {
-  <app-button [content]="tool" [withWrapper]="true" />
-  } } 
-  -->
+  <app-button [content]="tool" [withWrapper]="true" [feature]="'tools'" />
+  } }
 
-  <button class="filter-clear">Clear</button>
+  <app-button
+    content="Clear"
+    [withWrapper]="false"
+    [feature]="'clear'"
+    [className]="'filter-clear'"
+  />
 </section>
 }

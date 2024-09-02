@@ -1,12 +1,21 @@
 @if(withWrapper()) {
 <section class="button-wrapper">
-  <button (click)="removeFilterHandler(content(), feature())">
-    {{ content() }}
-  </button>
-  <img src="images/icon-remove.svg" alt="remove icon" />
+  <button>{{ content() }}</button>
+  <img
+    (click)="removeFilterHandler(content(), feature())"
+    src="images/icon-remove.svg"
+    alt="remove icon"
+  />
 </section>
-} @else {
-<button (click)="addFilterHandler(content(), feature())" class="filter-btn">
+
+} @if (!withWrapper() && feature() !== 'clear') {
+<button (click)="addFilterHandler(content(), feature())" [class]="className()">
   {{ content() }}
 </button>
+
+} @if (!withWrapper() && feature() === 'clear') {
+<button (click)="removeFilterHandler(content(), 'clear')" [class]="className()">
+  {{ content() }}
+</button>
+
 }

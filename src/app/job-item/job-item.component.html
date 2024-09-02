@@ -29,21 +29,29 @@
       [content]="job().role"
       [withWrapper]="false"
       [feature]="'role'"
+      [className]="'filter-btn'"
     />
     } @if (job().level){
     <app-button
       [content]="job().level"
       [withWrapper]="false"
       [feature]="'level'"
+      [className]="'filter-btn'"
     />
     } @if(job().languages){ @for (language of job().languages; track language){
     <app-button
       [content]="language"
       [withWrapper]="false"
       [feature]="'languages'"
+      [className]="'filter-btn'"
     />
     } } @if(job().tools){ @for (tool of job().tools; track tool){
-    <app-button [content]="tool" [withWrapper]="false" [feature]="'tools'" />
+    <app-button
+      [content]="tool"
+      [withWrapper]="false"
+      [feature]="'tools'"
+      [className]="'filter-btn'"
+    />
     } }
   </div>
 </li>

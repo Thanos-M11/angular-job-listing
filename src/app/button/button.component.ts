@@ -13,6 +13,8 @@ export class ButtonComponent {
   content = input.required<string>();
   feature = input.required<BtnType>();
   withWrapper = input.required<boolean>();
+  className = input<string>();
+
   filterServices = inject(FilterService);
   isFilterEmpty = this.filterServices.isEmpty();
 
