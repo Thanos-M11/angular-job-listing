@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Filter } from './filter.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class FilterService {
@@ -10,27 +11,30 @@ export class FilterService {
     tools: [],
   };
 
-  private filter: Filter = this.initialState;
+  private filterSubject = new BehaviorSubject<Filter>(this.initialState);
+  filter$ = this.filterSubject.asObservable();
 
   public getFilter(): Filter {
-    return this.filter;
+    return this.filterSubject.getValue();
   }
 
-  public setFilter(filter: Filter) {
-    this.filter = { ...this.filter, ...filter };
+  public setFilter(newFilter: Filter) {
+    this.filterSubject.next(newFilter);
   }
 
   public clearFilter(): void {
-    this.filter = this.initialState;
+    this.filterSubject.next(this.initialState);
   }
 
   public isEmpty(): boolean {
-    if (Object.keys(this.filter).length === 0) {
+    if (Object.keys(this.filterSubject.getValue()).length === 0) {
       return true;
     } else {
       return (
-        Object.values(this.filter).reduce((acc, cur) => acc + cur.length, 0) ===
-        0
+        Object.values(this.filterSubject.getValue()).reduce(
+          (acc, cur) => acc + cur.length,
+          0
+        ) === 0
       );
     }
   }

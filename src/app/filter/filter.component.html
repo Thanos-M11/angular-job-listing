@@ -7,7 +7,6 @@
     [withWrapper]="true"
     feature="role"
     actionType="remove"
-    (action)="filterActionHandler($event)"
   />
   } @if(filter().level){
   <app-button
@@ -15,7 +14,6 @@
     [withWrapper]="true"
     feature="level"
     actionType="remove"
-    (action)="filterActionHandler($event)"
   />
   } @if(filter().languages){ @for (language of filter().languages; track
   language) {
@@ -24,7 +22,6 @@
     [withWrapper]="true"
     feature="languages"
     actionType="remove"
-    (action)="filterActionHandler($event)"
   />
   } } @if(filter().tools){ @for (tool of filter().tools; track tool) {
   <app-button
@@ -32,7 +29,6 @@
     [withWrapper]="true"
     feature="tools"
     actionType="remove"
-    (action)="filterActionHandler($event)"
   />
   } }
 
@@ -42,7 +38,6 @@
     feature="clear"
     className="filter-clear"
     actionType="clear"
-    (action)="filterActionHandler($event)"
   />
 </section>
 }

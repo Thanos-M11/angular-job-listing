@@ -31,7 +31,6 @@
       feature="role"
       className="filter-btn"
       actionType="add"
-      (action)="jobActionHandler($event)"
     />
     } @if (job().level){
     <app-button
@@ -40,7 +39,6 @@
       feature="level"
       className="filter-btn"
       actionType="add"
-      (action)="jobActionHandler($event)"
     />
     } @if(job().languages){ @for (language of job().languages; track language){
     <app-button
@@ -49,7 +47,6 @@
       feature="languages"
       className="filter-btn"
       actionType="add"
-      (action)="jobActionHandler($event)"
     />
     } } @if(job().tools){ @for (tool of job().tools; track tool){
     <app-button
@@ -58,7 +55,6 @@
       feature="tools"
       className="filter-btn"
       actionType="add"
-      (action)="jobActionHandler($event)"
     />
     } }
   </div>

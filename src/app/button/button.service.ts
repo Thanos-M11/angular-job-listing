@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { FilterService } from '../filter/filter.service';
-import { BtnFeature } from './button.model';
+import { BtnFeature, ButtonConfigurator } from './button.model';
 
 @Injectable({ providedIn: 'root' })
 export class ButtonService {

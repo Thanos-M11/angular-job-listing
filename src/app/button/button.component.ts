@@ -1,5 +1,6 @@
-import { Component, inject, input, output } from '@angular/core';
-import { ActionType, BtnFeature, ButtonConfigurator } from './button.model';
+import { Component, inject, input } from '@angular/core';
+import { ActionType, BtnFeature } from './button.model';
+import { ButtonService } from './button.service';
 
 @Component({
   selector: 'app-button',
@@ -14,14 +15,19 @@ export class ButtonComponent {
   actionType = input.required<ActionType>();
   withWrapper = input<boolean>();
   className = input<string>();
-
-  action = output<ButtonConfigurator>();
+  buttonService = inject(ButtonService);
 
   buttonClickHandler() {
-    this.action.emit({
-      content: this.content(),
-      feature: this.feature(),
-      actionType: this.actionType(),
-    });
+    switch (this.actionType()) {
+      case 'add':
+        this.buttonService.addFilterHandler(this.content(), this.feature());
+        break;
+      case 'remove':
+        this.buttonService.removeFilterHandler(this.content(), this.feature());
+        break;
+      case 'clear':
+        this.buttonService.removeFilterHandler(this.content(), 'clear');
+        break;
+    }
   }
 }
