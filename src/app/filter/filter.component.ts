@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { Filter } from './filter.model';
+import { ButtonConfigurator } from '../button/button.model';
 
 @Component({
   selector: 'app-filter',
@@ -19,4 +20,10 @@ import { Filter } from './filter.model';
 export class FilterComponent {
   filter = input.required<Filter>();
   isFilterEmpty = input.required<Boolean>();
+
+  filterAction = output<ButtonConfigurator>();
+
+  filterActionHandler(event: ButtonConfigurator) {
+    this.filterAction.emit(event);
+  }
 }

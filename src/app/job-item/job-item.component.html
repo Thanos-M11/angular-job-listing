@@ -28,29 +28,37 @@
     <app-button
       [content]="job().role"
       [withWrapper]="false"
-      [feature]="'role'"
-      [className]="'filter-btn'"
+      feature="role"
+      className="filter-btn"
+      actionType="add"
+      (action)="jobActionHandler($event)"
     />
     } @if (job().level){
     <app-button
       [content]="job().level"
       [withWrapper]="false"
-      [feature]="'level'"
-      [className]="'filter-btn'"
+      feature="level"
+      className="filter-btn"
+      actionType="add"
+      (action)="jobActionHandler($event)"
     />
     } @if(job().languages){ @for (language of job().languages; track language){
     <app-button
       [content]="language"
       [withWrapper]="false"
-      [feature]="'languages'"
-      [className]="'filter-btn'"
+      feature="languages"
+      className="filter-btn"
+      actionType="add"
+      (action)="jobActionHandler($event)"
     />
     } } @if(job().tools){ @for (tool of job().tools; track tool){
     <app-button
       [content]="tool"
       [withWrapper]="false"
-      [feature]="'tools'"
-      [className]="'filter-btn'"
+      feature="tools"
+      className="filter-btn"
+      actionType="add"
+      (action)="jobActionHandler($event)"
     />
     } }
   </div>

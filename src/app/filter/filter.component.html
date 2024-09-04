@@ -5,30 +5,44 @@
   <app-button
     [content]="filter().role"
     [withWrapper]="true"
-    [feature]="'role'"
+    feature="role"
+    actionType="remove"
+    (action)="filterActionHandler($event)"
   />
   } @if(filter().level){
   <app-button
     [content]="filter().level"
     [withWrapper]="true"
-    [feature]="'level'"
+    feature="level"
+    actionType="remove"
+    (action)="filterActionHandler($event)"
   />
   } @if(filter().languages){ @for (language of filter().languages; track
   language) {
   <app-button
     [content]="language"
     [withWrapper]="true"
-    [feature]="'languages'"
+    feature="languages"
+    actionType="remove"
+    (action)="filterActionHandler($event)"
   />
   } } @if(filter().tools){ @for (tool of filter().tools; track tool) {
-  <app-button [content]="tool" [withWrapper]="true" [feature]="'tools'" />
+  <app-button
+    [content]="tool"
+    [withWrapper]="true"
+    feature="tools"
+    actionType="remove"
+    (action)="filterActionHandler($event)"
+  />
   } }
 
   <app-button
     content="Clear"
     [withWrapper]="false"
-    [feature]="'clear'"
-    [className]="'filter-clear'"
+    feature="clear"
+    className="filter-clear"
+    actionType="clear"
+    (action)="filterActionHandler($event)"
   />
 </section>
 }

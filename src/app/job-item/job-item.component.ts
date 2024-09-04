@@ -1,6 +1,7 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { Job } from '../job-list/job.model';
+import { ButtonConfigurator } from '../button/button.model';
 
 @Component({
   selector: 'app-job-item',
@@ -11,4 +12,10 @@ import { Job } from '../job-list/job.model';
 })
 export class JobItemComponent {
   job = input.required<Job>();
+
+  jobAction = output<ButtonConfigurator>();
+
+  jobActionHandler(event: ButtonConfigurator) {
+    this.jobAction.emit(event);
+  }
 }

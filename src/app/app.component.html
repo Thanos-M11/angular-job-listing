@@ -1,4 +1,8 @@
 <app-header />
-<app-filter [filter]="currentFilter" [isFilterEmpty]="isFilterEmpty" />
-<app-job-list [jobs]="currentJobs" />
+<app-filter
+  [filter]="currentFilter"
+  [isFilterEmpty]="isFilterEmpty"
+  (filterAction)="onFilterChange($event)"
+/>
+<app-job-list [jobs]="currentJobs" (jobListAction)="onFilterChange($event)" />
 <app-footer />
