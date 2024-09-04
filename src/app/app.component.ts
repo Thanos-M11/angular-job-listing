@@ -1,4 +1,4 @@
-import { Component, DoCheck, inject } from '@angular/core';
+import { Component, DoCheck, inject, output } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FilterComponent } from './filter/filter.component';
