@@ -1,11 +1,12 @@
 import { Component, inject, input } from '@angular/core';
 import { ActionType, BtnFeature } from './button.model';
 import { ButtonService } from './button.service';
+import { WrapperComponent } from '../ui/wrapper/wrapper.component';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [],
+  imports: [WrapperComponent],
   templateUrl: './button.component.html',
   styleUrl: './button.component.css',
 })

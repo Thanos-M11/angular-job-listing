@@ -1,13 +1,7 @@
 @if(withWrapper()) {
-<section class="button-wrapper">
+<app-wrapper [content]="content()" [feature]="feature()">
   <button>{{ content() }}</button>
-
-  <img
-    (click)="buttonClickHandler()"
-    src="images/icon-remove.svg"
-    alt="remove icon"
-  />
-</section>
+</app-wrapper>
 
 } @else {
 <button [class]="className()" (click)="buttonClickHandler()">
