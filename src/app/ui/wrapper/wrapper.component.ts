@@ -8,6 +8,10 @@ import { ButtonService } from '../../button/button.service';
   imports: [],
   templateUrl: './wrapper.component.html',
   styleUrl: './wrapper.component.css',
+  host: {
+    class: 'button-wrapper',
+    '(click)': 'removeHandler()',
+  },
 })
 export class WrapperComponent {
   content = input<string>();
